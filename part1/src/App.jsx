@@ -1,17 +1,20 @@
 import "./App.css";
 import { useState } from "react";
 
-const Counter = (props) => {
-  // eslint-disable-next-line react/prop-types
-  return <h1>{props.number}</h1>;
+// eslint-disable-next-line react/prop-types
+const Counter = ({number}) => {
+  console.log("counter render")
+  return <h1>{number}</h1>;
 };
 
 const App = () => {
   const [contador, updateContador] = useState(0); //se guarda el estado y este esta compuesto por 2 cosas
 
   //const contador = useState(0); se guarda el estado y este esta compuesto por 2 cosas
-  //const contadorValue = contador[0]; 1. Nos devuelve el valor del estado
-  //const updateContador = contador[1]; 2. Un metodo para actualizar el estado
+  //1. Nos devuelve el valor del estado
+  //2. Un metodo para actualizar el estado
+
+  console.log("render")
 
   const handleClick = () => {
     updateContador(contador + 1);
