@@ -1,10 +1,9 @@
 import "./App.css";
 import { useState } from "react";
 
-// eslint-disable-next-line react/prop-types
-const Counter = ({number}) => {
-  console.log("counter render")
-  return <h1>{number}</h1>;
+const Counter = (props) => {
+  // eslint-disable-next-line react/prop-types
+  return <h1>{props.number}</h1>;
 };
 
 const App = () => {
