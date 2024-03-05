@@ -23,7 +23,7 @@ const App = () => {
   const isEven = contador % 2 === 0;
   const mensajePop = isEven ? "Es par" : "Es impar";
 
-  //en el componente Counter se muestra el valor actual del contador, el cual se identifica como number
+  //en el componente Counter se muestra el valor actual del contador el cual se identifica como number
   return (
     <div>
       <h1>El valor del contador es:</h1>
