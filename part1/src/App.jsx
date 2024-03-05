@@ -1,9 +1,9 @@
 import "./App.css";
 import { useState } from "react";
 
-const Counter = (props) => {
-  // eslint-disable-next-line react/prop-types
-  return <h1>{props.number}</h1>;
+// eslint-disable-next-line react/prop-types
+const Counter = ({ numeroactual }) => {
+  return <h1>{numeroactual}</h1>;
 };
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
   //1. Nos devuelve el valor del estado
   //2. Un metodo para actualizar el estado
 
-  console.log("render")
+  console.log("render");
 
   const handleClick = () => {
     updateContador(contador + 1);
@@ -23,12 +23,12 @@ const App = () => {
   const isEven = contador % 2 === 0;
   const mensajePop = isEven ? "Es par" : "Es impar";
 
-  //en el componente Counter se muestra el valor actual del contador el cual se identifica como number
+  //El componente Counter se muestra el valor actual del contador, se identifica como number=contador
   return (
     <div>
       <h1>El valor del contador es:</h1>
 
-      <Counter number={contador} />
+      <Counter numeroactual={contador} />
 
       <p>{mensajePop}</p>
       <button onClick={handleClick}> Incrementar </button>
