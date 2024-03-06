@@ -3,6 +3,7 @@ import { useState } from "react";
 
 // eslint-disable-next-line react/prop-types
 const Counter = ({ numeroactual }) => {
+  console.log("Counter render")
   return <h1>{numeroactual}</h1>;
 };
 
