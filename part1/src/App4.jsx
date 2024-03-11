@@ -3,7 +3,7 @@ import {Note} from "./Note.jsx"
 
 const App4 = (props) => {
     // eslint-disable-next-line react/prop-types
-    const [notes,setNotes]=useState([props.notes]);
+    const [notes,setNotes]=useState([props.notes]); //accede y actualiza las variables que esta en el main
     const [newNote,setNewNote]=useState("");
 
     useEffect (() => {
