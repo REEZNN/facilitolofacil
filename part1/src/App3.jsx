@@ -23,8 +23,10 @@ const App3 = () => {
     if(typeof notes ==='undefined'|| notes.length === 0){
         return "no tenemos notas que mostrar"
     }
-    
+
   return (
+    <div>
+        <h1>Notes</h1>
     <ol>
       {notes.map((note) => {
         // eslint-disable-next-line react/jsx-key
@@ -34,7 +36,7 @@ const App3 = () => {
           </li>
         )
       })}
-    </ol>
+    </ol></div>
   );
 };
 export default App3;
