@@ -38,7 +38,7 @@ const App4 = (props) => {
         <h1>Notes</h1>
         <ol>
             {notes.map((note)=>(
-                <Note key={note.title}{...note}/>
+                <Note key={note.title} {...note}/>
             ))}
         </ol>
         <form onChange={handleSumbit}>
