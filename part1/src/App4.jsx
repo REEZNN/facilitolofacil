@@ -16,7 +16,7 @@ const App4 = (props) => {
         }, [])
 
         
-    const handleChange=(event)=>{
+    const handleChange=(event)=>{//evalua lo que contiene la caja
         setNewNote(event.targert.value);
     }
 
