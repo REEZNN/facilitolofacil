@@ -20,6 +20,9 @@ const notes = [//siempre debe ser un array
 ];
 
 const App3 = () => {
+    if(typeof notes ==='undefined'|| notes.length === 0){
+        return "no tenemos notas que mostrar"
+    }
   return (
     <div>
       {notes.map((note) => {
