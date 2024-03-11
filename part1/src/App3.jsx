@@ -23,17 +23,18 @@ const App3 = () => {
     if(typeof notes ==='undefined'|| notes.length === 0){
         return "no tenemos notas que mostrar"
     }
+    
   return (
-    <div>
+    <ol>
       {notes.map((note) => {
         // eslint-disable-next-line react/jsx-key
-        return (<div>
+        return (<li key={note.id}>
           <p><strong>{note.content}</strong></p>
           <small><time>{note.date}</time></small>
-          </div>
+          </li>
         )
       })}
-    </div>
+    </ol>
   );
 };
 export default App3;
