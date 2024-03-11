@@ -1,11 +1,27 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App3 from './App3.jsx'
+import App4 from './App4.jsx'
 import './index.css'
 
+const notes = [//siempre debe ser un array
+  {userId:1,
+    id: 1,
+    title: "HTML is easy",
+    body:2024
+  },
+  {userId:1,
+    id: 2,
+    title: "Browser can execute only JavaScript",
+    body:2023
+  },
+  {userId:1,
+    id: 3,
+    title: "GET and POST are the most important methods of HTTP protocol",
+    
+    body:2022
+  },
+];
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App3 />
-  </React.StrictMode>,
+  
+    <App4 notes={notes}/>
 )
