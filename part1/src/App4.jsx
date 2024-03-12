@@ -20,7 +20,7 @@ const App4 = (props) => { // props es un objeto para poder acceder a todas las p
 
         
     const handleChange=(event)=>{//evalua lo que contiene la caja
-        setNewNote(event.target.value);
+        setNewNote(event.target.value)
     }
 
     const handleSumbit=(event)=>{
@@ -32,7 +32,7 @@ const App4 = (props) => { // props es un objeto para poder acceder a todas las p
             body:newNote
         }
 
-        setNotes((prevNotes)=>{prevNotes.concat(noteToAddTostate)});
+        setNotes((prevNotes)=>prevNotes.concat(noteToAddTostate));
         setNewNote("");
     }
 
@@ -44,7 +44,7 @@ const App4 = (props) => { // props es un objeto para poder acceder a todas las p
                 <Note key={parametro.id} {...parametro}/>
             ))}
         </ol>
-        <form onChange={handleSumbit}>
+        <form onSubmit={handleSumbit}>
 
             <input type="text" onChange={handleChange} value={newNote}></input>
             <button>Crear Nota</button>
