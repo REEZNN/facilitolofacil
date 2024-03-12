@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import {Note} from "./Note.jsx"
 
-const App4 = (props) => {
+const App4 = (props) => { // props es el objeto que contiene todas las propiedades que se pasan al componente
+    
+    //props.notess es una de esas propiedades 
     // eslint-disable-next-line react/prop-types
-    const [notes,setNotes]=useState([props.notes]); //accede y actualiza las variables que esta en el main
+    const [notes,setNotes]=useState([props.notess]); //accede y actualiza las variables que esta en el array del main
     const [newNote,setNewNote]=useState("");
 
     useEffect (() => {
@@ -37,8 +39,8 @@ const App4 = (props) => {
     <div>
         <h1>Notes</h1>
         <ol>
-            {notes.map((note)=>(
-                <Note key={note.title} {...note}/>
+            {notes.map((parametro)=>(//el parametro es un objeto para acceder a la informacion
+                <Note key={parametro.title} {...parametro}/>
             ))}
         </ol>
         <form onChange={handleSumbit}>

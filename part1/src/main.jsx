@@ -2,7 +2,8 @@ import ReactDOM from 'react-dom/client'
 import App4 from './App4.jsx'
 import './index.css'
 
-const notes = [//siempre debe ser un array
+const array = [//siempre debe ser un array (OBJETO)
+//ejemplo:
   {userId:1,
     id: 1,
     title: "HTML is easy",
@@ -23,5 +24,6 @@ const notes = [//siempre debe ser un array
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   
-    <App4 notes={notes}/>
+    <App4 notess={array}/>
+    //se pasa al App4 el array atraves de la propiedad "notess"
 )
