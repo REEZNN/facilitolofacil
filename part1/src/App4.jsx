@@ -9,18 +9,18 @@ const App4 = (props) => { // props es un objeto para poder acceder a todas las p
     const [notes,setNotes]=useState([props.notess]); //accede y actualiza las variables que esta en el array del main
     const [newNote,setNewNote]=useState("");
 
-    useEffect (() => {
-        console.log("useEffect"); 
-        fetch("https://jsonplaceholder.typicode.com/posts")
-        .then((response) =>response.json())
-        .then((json) => {
+    useEffect (() => {// Sirve para no hacer un render infinito, es un HOOK
+
+        fetch("https://jsonplaceholder.typicode.com/posts")//fetch devuelve una promesa
+        .then((respuesta) =>respuesta.json()) //esta respuesta transformala en un JSON
+        .then((json) => { //cuanto ya tengo el JSON haz algo
         setNotes(json)
         })
-        }, [])
+        }, []) //el [] es para que se ejecute la 1ra vez nomas ya que seria un bucle infinito
 
         
     const handleChange=(event)=>{//evalua lo que contiene la caja
-        setNewNote(event.targert.value);
+        setNewNote(event.target.value);
     }
 
     const handleSumbit=(event)=>{
