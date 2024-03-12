@@ -41,12 +41,12 @@ const App4 = (props) => { // props es un objeto para poder acceder a todas las p
         <h1>Notes</h1>
         <ol>
             {notes.map((parametro)=>(//el parametro es un objeto para acceder a la informacion
-                <Note key={parametro.title} {...parametro}/>
+                <Note key={parametro.id} {...parametro}/>
             ))}
         </ol>
         <form onChange={handleSumbit}>
 
-            <input type="text" onChange={handleChange}></input>
+            <input type="text" onChange={handleChange} value={newNote}></input>
             <button>Crear Nota</button>
         </form>
     
