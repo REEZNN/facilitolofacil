@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import {Note} from "./Note.jsx"
 
-const App4 = (props) => { // props es el objeto que contiene todas las propiedades que se pasan al componente
+const App4 = (props) => { // props es un objeto para poder acceder a todas las propiedades del componente App4 cuando es llamado desde el main
     
-    //props.notess es una de esas propiedades 
+    //"notess" es la propiedad que tiene App4 (se utiliza props.notes para acceder a la propiedad "notess" que contiene el array) 
+
     // eslint-disable-next-line react/prop-types
     const [notes,setNotes]=useState([props.notess]); //accede y actualiza las variables que esta en el array del main
     const [newNote,setNewNote]=useState("");

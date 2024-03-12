@@ -26,4 +26,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   
     <App4 notess={array}/>
     //se pasa al App4 el array atraves de la propiedad "notess"
+    //"notess" es una propiedad que contiene el array  
 )
