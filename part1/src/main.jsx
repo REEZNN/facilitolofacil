@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import App4 from './App4.jsx'
+import App5 from './App5.jsx'
 import './index.css'
 
 const array = [//siempre debe ser un array (OBJETO)
@@ -24,7 +24,7 @@ const array = [//siempre debe ser un array (OBJETO)
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 
-    <App4 notess={array}/>
+    <App5 notess={array}/>
     //"notess" es una propiedad que se le asigna a App4
     //se le pasa a App4 un array atraves de la propiedad "notess"  
 )
