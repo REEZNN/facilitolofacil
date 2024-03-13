@@ -29,8 +29,8 @@ const App5 = (props) => {
 
   const handleSumbit = (event) => {
     event.preventDefault();
+    
     console.log("crear nota");
-
     const noteToAddTostate = {
       title: newNote,
       body: newNote,
