@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Note } from "./Note.jsx";
-import axios from "axios";
+import { getAllNotes } from "./servicios/notas/getAllNotes.jsx";
+import { createNote } from "./servicios/notas/createNote.jsx";
 
 const App5 = (props) => {
   // props es un objeto para poder acceder a todas las propiedades del componente App4 cuando es llamado desde el main
@@ -13,14 +14,9 @@ const App5 = (props) => {
 
   useEffect(() => {
     // Sirve para no hacer un render infinito, es un HOOK
-
-    axios
-      .get("https://jsonplaceholder.typicode.com/posts") 
-      .then((respuesta) => {//lo que obtiene lo tramsforma en JSON por defecto
-        //cuanto ya tengo la respuesta haz algo
-        const { data } = respuesta;
-        setNotes(data);
-      });
+    getAllNotes().then((notes) => {
+      setNotes(notes);
+    });
   }, []); //el [] es para que se ejecute la 1ra vez nomas ya que seria un bucle infinito
 
   const handleChange = (event) => {
@@ -35,16 +31,13 @@ const App5 = (props) => {
     const noteToAddTostate = {
       title: newNote,
       body: newNote,
-      userId:1
+      userId: 1,
     };
-    
-    axios
-    .post('https://jsonplaceholder.typicode.com/posts', noteToAddTostate) //
-    .then(respuesta =>{
-        const {data} = respuesta;
-        setNotes(prevNotes=>prevNotes.concat(data)) 
-        //concatenar las notas previas con las notas nuevas creadas
-    })
+
+    createNote(noteToAddTostate).then((newNote) => {
+      setNotes((prevNotes) => prevNotes.concat(newNote));
+    });
+
     setNewNote("");
   };
 
