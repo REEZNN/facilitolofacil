@@ -31,13 +31,20 @@ const App5 = (props) => {
   const handleSumbit = (event) => {
     event.preventDefault();
     console.log("crear nota");
+
     const noteToAddTostate = {
-      id: notes.length + 1,
       title: newNote,
       body: newNote,
+      userId:1
     };
-
-    setNotes((prevNotes) => prevNotes.concat(noteToAddTostate));
+    
+    axios
+    .post('https://jsonplaceholder.typicode.com/posts', noteToAddTostate) //
+    .then(respuesta =>{
+        const {data} = respuesta;
+        setNotes(prevNotes=>prevNotes.concat(data)) 
+        //concatenar las notas previas con las notas nuevas creadas
+    })
     setNewNote("");
   };
 
